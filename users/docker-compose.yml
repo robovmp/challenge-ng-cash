@@ -1,0 +1,15 @@
+version: '3.8'  
+services:
+    app:
+        container_name: users
+        restart: always
+        build: .
+        volumes:
+            - .:/usr/app/
+            - /usr/app/node_modules
+        ports:
+            - 3000:3000
+networks:
+    default:
+        name: database_default
+        external: true   
